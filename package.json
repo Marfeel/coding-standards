@@ -1,0 +1,16 @@
+{
+  "name": "@marfeel/coding-standards",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.19.0"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards",
+  "scripts": {
+    "lerna": "lerna",
+    "build": "lerna run build",
+    "bootstrap": "lerna bootstrap --hoist"
+  }
+}

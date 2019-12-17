@@ -1,0 +1,56 @@
+#!groovy
+
+pipeline {
+  agent { node { label 'docker' } }
+  options {
+    buildDiscarder(logRotator(daysToKeepStr:'60'))
+    timeout(time: 10, unit: 'MINUTES')
+    timestamps()
+  }
+  environment {
+    GITHUB_ACCESS_TOKEN = credentials('BOB_GITHUB_TOKEN')
+    SSH_KEY = credentials('JENKINS_SSH_PRIVATE_KEY')
+    TAG = "marfeel-coding-standards:${env.BUILD_NUMBER}"
+  }
+
+  stages {
+    stage('prepare') {
+      steps {
+        sh 'whoami'
+          sh '''
+          docker ps
+          ls -la
+          pwd
+          env | sort
+          '''
+      }
+    }
+    stage('Build') {
+      steps {
+          sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg GITHUB_ACCESS_TOKEN="$GITHUB_ACCESS_TOKEN" ."""
+      }
+    }
+    stage('Lint') {
+      when {
+        expression {
+          return env.GIT_BRANCH != "origin/master"
+        }
+      }
+      steps {
+        sh 'docker run --rm $TAG run lint'
+      }
+    }
+    stage('Publish') {
+      when {
+        expression {
+          return env.GIT_BRANCH == "origin/master"
+        }
+      }
+      steps {
+        sh """
+          docker run --rm --entrypoint /bin/bash $TAG -c "npm run lerna publish -- --dist-tag latest --canary --no-git-tag-version --yes --preid snapshot"
+        """
+      }
+    }
+  }
+}

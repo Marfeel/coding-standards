@@ -1,0 +1,28 @@
+FROM node:lts-buster as dependencies
+
+ARG GITHUB_ACCESS_TOKEN
+
+WORKDIR /root/
+
+WORKDIR /app
+
+COPY lerna.json package.json package-lock.json .npmrc ./
+COPY packages/eslint-config-js/package*.json .npmrc ./packages/eslint-config-js/
+
+RUN npm config set registry https://npm.pkg.github.com/marfeel
+RUN npm config set //npm.pkg.github.com/:_authToken ${GITHUB_ACCESS_TOKEN}
+RUN npm config set unsafe-perm true 
+
+RUN npm install lerna -g
+RUN lerna bootstrap --hoist
+
+FROM node:lts-buster
+
+WORKDIR /app
+
+COPY --from=dependencies /root/.npmrc /root/.npmrc
+COPY --from=dependencies /app/node_modules /app/node_modules
+COPY --from=dependencies /app/packages /app/packages
+COPY . .
+
+ENTRYPOINT ["npm"]
