@@ -1,5 +1,4 @@
 {
-  "name": "@marfeel/coding-standards",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -9,8 +8,12 @@
   },
   "homepage": "https://github.com/Marfeel/coding-standards",
   "scripts": {
+    "lint": "eslint .",
     "lerna": "lerna",
     "build": "lerna run build",
     "bootstrap": "lerna bootstrap --hoist"
+  },
+  "dependencies": {
+    "eslint": "^6.7.2"
   }
 }
