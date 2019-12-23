@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "dependencies": {
-    "babel-eslint": "^10.0.3"
+    "eslint-plugin-jest": "^22.6.4"
   }
 }
