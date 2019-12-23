@@ -1,0 +1,22 @@
+{
+  "name": "@marfeel/eslint-config-jest",
+  "version": "1.0.0",
+  "description": "basic eslint configuration for jest",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards#readme",
+  "dependencies": {
+    "babel-eslint": "^10.0.3"
+  }
+}
