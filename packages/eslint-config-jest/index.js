@@ -1,0 +1,20 @@
+module.exports = {
+	plugins: [
+		'jest'
+	],
+	env: {
+		commonjs: true
+	},
+	extends: ['plugin:jest/recommended'],
+	rules: {
+		'jest/no-alias-methods': 'error',
+		'jest/no-jasmine-globals': 'error',
+		'jest/consistent-test-it': [
+			'error',
+			{
+				fn: 'test',
+				withinDescribe: 'test'
+			}
+		]
+	}
+};
