@@ -12,6 +12,7 @@ COPY packages/eslint-config-jest/package*.json .npmrc ./packages/eslint-config-j
 COPY packages/eslint-config-jasmine/package*.json .npmrc ./packages/eslint-config-jasmine/
 COPY packages/eslint-config-node/package*.json .npmrc ./packages/eslint-config-node/
 COPY packages/eslint-config-ts/package*.json .npmrc ./packages/eslint-config-ts/
+COPY packages/eslint-config-react/package*.json .npmrc ./packages/eslint-config-react/
 
 RUN npm config set registry https://npm.pkg.github.com/marfeel
 RUN npm config set //npm.pkg.github.com/:_authToken ${GITHUB_ACCESS_TOKEN}
