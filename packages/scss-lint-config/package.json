@@ -1,0 +1,23 @@
+{
+  "name": "@marfeel/scss-lint-config",
+  "version": "1.0.0",
+  "description": "marfeel scss-lint configuration",
+  "main": "scss-lint.yml",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "scss-lint"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "files": [
+    "scss-lint.yml",
+    "custom_linters"
+  ],
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards#readme"
+}
