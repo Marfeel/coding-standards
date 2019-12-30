@@ -14,6 +14,7 @@ COPY packages/eslint-config-node/package*.json .npmrc ./packages/eslint-config-n
 COPY packages/eslint-config-ts/package*.json .npmrc ./packages/eslint-config-ts/
 COPY packages/eslint-config-react/package*.json .npmrc ./packages/eslint-config-react/
 COPY packages/eslint-config-vue/package*.json .npmrc ./packages/eslint-config-vue/
+COPY packages/stylelint-config-styled-components/package*.json .npmrc ./packages/stylelint-config-styled-components/
 
 RUN npm config set registry https://npm.pkg.github.com/marfeel
 RUN npm config set //npm.pkg.github.com/:_authToken ${GITHUB_ACCESS_TOKEN}

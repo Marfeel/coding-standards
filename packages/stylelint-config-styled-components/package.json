@@ -1,0 +1,25 @@
+{
+  "name": "@marfeel/stylelint-config-styled-components",
+  "version": "1.0.0",
+  "description": "marfeel style-lint configuration for styled-components",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards#readme",
+  "dependencies": {
+    "stylelint": "^12.0.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.9.0"
+  }
+}
