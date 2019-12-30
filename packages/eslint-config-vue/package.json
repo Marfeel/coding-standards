@@ -1,0 +1,23 @@
+{
+  "name": "@marfeel/eslint-config-vue",
+  "version": "1.0.0",
+  "description": "marfeel eslint configuration for vue",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards#readme",
+  "dependencies": {
+    "eslint-plugin-vue": "^6.1.1",
+    "vue-eslint-parser": "^7.0.0"
+  }
+}
