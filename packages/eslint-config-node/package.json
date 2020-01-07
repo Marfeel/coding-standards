@@ -16,7 +16,7 @@
     "url": "https://github.com/Marfeel/coding-standards/issues"
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
-  "dependencies": {
+  "peerDependencies": {
     "eslint-plugin-node": "^11.0.0"
   }
 }

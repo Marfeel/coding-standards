@@ -16,7 +16,7 @@
     "url": "https://github.com/Marfeel/coding-standards/issues"
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
-  "dependencies": {
+  "peerDependencies": {
     "babel-eslint": "^10.0.3"
   }
 }

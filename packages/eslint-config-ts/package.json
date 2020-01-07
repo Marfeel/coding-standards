@@ -16,7 +16,7 @@
     "url": "https://github.com/Marfeel/coding-standards/issues"
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
-  "dependencies": {
+  "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0"
   }

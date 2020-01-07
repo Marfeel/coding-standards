@@ -16,7 +16,7 @@
     "url": "https://github.com/Marfeel/coding-standards/issues"
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
-  "dependencies": {
+  "peerDependencies": {
     "stylelint": "^12.0.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",

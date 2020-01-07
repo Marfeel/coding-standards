@@ -11,9 +11,10 @@
     "lint": "eslint .",
     "lerna": "lerna",
     "build": "lerna run build",
-    "bootstrap": "lerna bootstrap --hoist"
+    "bootstrap": "lerna bootstrap"
   },
   "dependencies": {
-    "eslint": "^6.7.2"
+    "eslint": "^6.7.2",
+    "babel-eslint": "^10.0.3"
   }
 }

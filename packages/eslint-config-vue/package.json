@@ -16,7 +16,7 @@
     "url": "https://github.com/Marfeel/coding-standards/issues"
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
-  "dependencies": {
+  "peerDependencies": {
     "eslint-plugin-vue": "^6.1.1",
     "vue-eslint-parser": "^7.0.0"
   }
