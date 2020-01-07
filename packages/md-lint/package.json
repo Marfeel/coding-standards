@@ -1,0 +1,23 @@
+{
+  "name": "@marfeel/md-lint-config",
+  "version": "1.0.0",
+  "description": "marfeel md-lint configuration",
+  "main": ".markdownlint.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "md-lint"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "files": [
+    "custom_linters",
+    ".markdownlint.json"
+  ],
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards/packages/md-lint#readme"
+}
