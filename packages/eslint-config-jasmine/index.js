@@ -3,6 +3,9 @@ module.exports = {
 		'jasmine'
 	],
 	extends: ['plugin:jasmine/recommended'],
+	env: {
+		jasmine: true
+	},
 	rules: {
 		'jasmine/named-spy': 'error'
 	}
