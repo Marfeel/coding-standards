@@ -2,7 +2,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
 	extends: [
-		'../base/.eslintrc',
+		'@marfeel/js',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:@typescript-eslint/recommended-requiring-type-checking'
 	],
