@@ -7,6 +7,7 @@ module.exports = {
 		jasmine: true
 	},
 	rules: {
-		'jasmine/named-spy': 'error'
+		'jasmine/named-spy': 'error',
+		'max-nested-callbacks': 'off'
 	}
 };
