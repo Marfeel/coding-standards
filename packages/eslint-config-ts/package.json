@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "dependencies": {
+    "@marfeel/eslint-config-js": "^1.0.1-snapshot.16",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0"
   }
