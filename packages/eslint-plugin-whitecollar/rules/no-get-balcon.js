@@ -12,7 +12,8 @@ module.exports = {
 				if (!!node.callee.object &&
 					node.callee.object.name === 'WC' &&
 					node.callee.property.name === 'getBalcon') {
-					context.report(node, 'WC.getBalcon is disallowed. Please use getContentGroup API. docs<https://shorturl.at/GHIZ3>');
+					context.report(node,
+						'WC.getBalcon is disallowed. Please use getContentGroup API. docs<https://shorturl.at/GHIZ3>');
 				}
 			}
 		};
