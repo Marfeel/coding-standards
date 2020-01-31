@@ -1,0 +1,25 @@
+{
+  "name": "@marfeel/eslint-plugin-whitecollar",
+  "version": "1.0.0",
+  "description": "whitecollar plugin rules",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards#readme",
+  "devDependencies": {
+    "eslint": "~2.6.0"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.0.3"
+  }
+}
