@@ -3,9 +3,9 @@ module.exports = {
 		WC: 'readonly'
 	},
 	plugins: [
-		'whitecollar'
+		'@marfeel/whitecollar'
 	],
 	rules: {
-		'whitecollar/no-get-balcon': 'error'
+		'@marfeel/whitecollar/no-get-balcon': 'error'
 	}
 };
