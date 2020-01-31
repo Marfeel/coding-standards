@@ -18,8 +18,5 @@
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "devDependencies": {
     "eslint": "~2.6.0"
-  },
-  "dependencies": {
-    "babel-eslint": "^10.0.3"
   }
 }

@@ -18,6 +18,6 @@
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "dependencies": {
     "babel-eslint": "^10.0.3",
-    "@marfeel/eslint-plugin-whitecollar": "file:/Users/ecot/Marfeel/coding-standards/packages/eslint-plugin-whitecollar"
+    "@marfeel/eslint-plugin-whitecollar": "^1.0.0"
   }
 }
