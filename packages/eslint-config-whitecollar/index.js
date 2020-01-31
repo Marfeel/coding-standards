@@ -1,4 +1,7 @@
 module.exports = {
+	globals: {
+		"WC": "readonly"
+	},
 	plugins: [
 		'whitecollar'
 	],
