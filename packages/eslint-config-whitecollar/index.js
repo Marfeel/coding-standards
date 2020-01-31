@@ -1,8 +1,8 @@
 module.exports = {
 	plugins: [
-		"whitecollar"
+		'whitecollar'
 	],
 	rules: {
-		"whitecollar/no-get-balcon": "error"
+		'whitecollar/no-get-balcon': 'error'
 	}
 };
