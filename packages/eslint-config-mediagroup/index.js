@@ -21,4 +21,5 @@ module.exports = {
 		'**/*.js',
 		'!**/src/**/*.js',
 		'**/src/whiteCollar/*.js'
+	]
 };
