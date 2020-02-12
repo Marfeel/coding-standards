@@ -41,14 +41,9 @@ pipeline {
       }
     }
     stage('Publish') {
-      when {
-        expression {
-          return env.GIT_BRANCH == "origin/master"
-        }
-      }
       steps {
         sh """
-          docker run --rm --entrypoint /bin/bash $TAG -c "npm run lerna publish -- --dist-tag latest --canary --no-git-tag-version --yes --preid snapshot"
+          docker run --rm --entrypoint /bin/bash $TAG -c "npm run lerna publish -- --canary --no-git-tag-version --yes --preid alpha"
         """
       }
     }
