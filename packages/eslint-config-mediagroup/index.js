@@ -16,5 +16,10 @@ module.exports = {
 	extends: [
 		'@marfeel/eslint-config-js',
 		'@marfeel/eslint-config-jest'
+	],
+	ignorePatterns: [
+		'**/*.js',
+		'!**/src/**/*.js',
+		'**/src/whiteCollar/*.js'
 	]
 };
