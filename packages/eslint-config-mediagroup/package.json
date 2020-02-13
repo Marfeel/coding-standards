@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@marfeel/eslint-config-jest": "^1.0.1-snapshot.32",
-    "@marfeel/eslint-config-js": "^1.0.1-snapshot.32"
+    "@marfeel/eslint-config-js": "^1.0.1-snapshot.32",
+    "@marfeel/eslint-config-whitecollar": "^1.0.1-snapshot.32"
   }
 }

@@ -15,7 +15,8 @@
 module.exports = {
 	extends: [
 		'@marfeel/eslint-config-js',
-		'@marfeel/eslint-config-jest'
+		'@marfeel/eslint-config-jest',
+		'@marfeel/eslint-config-whitecollar'
 	],
 	ignorePatterns: [
 		'**/*.js',
