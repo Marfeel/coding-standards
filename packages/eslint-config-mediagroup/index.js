@@ -20,7 +20,6 @@ module.exports = {
 	],
 	ignorePatterns: [
 		'**/*.js',
-		'!**/src/**/*.js',
-		'**/src/whiteCollar/*.js'
+		'!**/src/**/*.js'
 	]
 };
