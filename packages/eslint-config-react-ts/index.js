@@ -2,25 +2,10 @@
 module.exports = {
 	parser: '@typescript-eslint/parser',
 	extends: [
-		'plugin:react/recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:@typescript-eslint/recommended-requiring-type-checking'
+		'@marfeel/ts',
+		'@marfeel/react'
 	],
-	parserOptions: {
-		ecmaVersion: 2018,
-		sourceType: 'module',
-		ecmaFeatures: {
-			jsx: true
-		}
-	},
-	settings: {
-		react: {
-			version: 'detect'
-		}
-	},
 	rules: {
-		'class-methods-use-this': 'warn',
-		'@typescript-eslint/require-await': 'off',
 		'react/jsx-filename-extension': [
 			'warn',
 			{
@@ -33,63 +18,6 @@ module.exports = {
 				allowExpressions: true,
 				allowTypedFunctionExpressions: true
 			}
-		],
-		'jsx-quotes': 'error',
-		'react/button-has-type': 'error',
-		'react/default-props-match-prop-types': 'error',
-		'react/jsx-boolean-value': ['error', 'never'],
-		'react/jsx-closing-bracket-location': 'error',
-		'react/jsx-closing-tag-location': 'error',
-		'react/jsx-curly-brace-presence': ['error', 'never'],
-		'react/jsx-curly-spacing': ['error', {
-			when: 'always',
-			children: true
-		}],
-		'react/jsx-equals-spacing': ['error', 'never'],
-		'react/jsx-first-prop-new-line': 'error',
-		'react/jsx-fragments': ['error', 'element'],
-		'react/jsx-handler-names': 'error',
-		'react/jsx-no-bind': ['error', {
-			ignoreDOMComponents: true,
-			ignoreRefs: false,
-			allowArrowFunctions: true,
-			allowFunctions: false,
-			allowBind: false
-		}],
-		'react/jsx-props-no-multi-spaces': 'error',
-		'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
-		'react/jsx-pascal-case': 'error',
-		'react/jsx-tag-spacing': ['error', {
-			closingSlash: 'never',
-			beforeSelfClosing: 'always',
-			afterOpening: 'never',
-			beforeClosing: 'never'
-		}],
-		'react/jsx-wrap-multilines': ['error', {
-			declaration: 'parens-new-line',
-			assignment: 'parens-new-line',
-			return: 'parens-new-line',
-			arrow: 'parens-new-line',
-			condition: 'parens-new-line',
-			logical: 'parens-new-line',
-			prop: 'parens-new-line'
-		}],
-		'react/no-access-state-in-setstate': 'error',
-		'react/no-array-index-key': 'warn',
-		'react/no-redundant-should-component-update': 'error',
-		'react/no-typos': 'error',
-		'react/no-this-in-sfc': 'error',
-		'react/no-unsafe': 'error',
-		'react/no-unused-prop-types': 'error',
-		'react/no-unused-state': 'error',
-		'react/no-will-update-set-state': 'error',
-		'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
-		'react/prefer-es6-class': ['error', 'always'],
-		'react/self-closing-comp': ['error', {
-			component: true,
-			html: true
-		}],
-		'react/sort-comp': 'error',
-		'react/void-dom-elements-no-children': 'error'
+		]
 	}
 };
