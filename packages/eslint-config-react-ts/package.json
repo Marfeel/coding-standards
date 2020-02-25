@@ -1,0 +1,24 @@
+{
+  "name": "@marfeel/eslint-config-react-ts",
+  "version": "1.0.0",
+  "description": "marfeel eslint configuration for react with typescript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+	"@typescript-eslint/parser": "^2.13.0",
+	"eslint-plugin-react": "^7.17.0"
+  }
+}
