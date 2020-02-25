@@ -2,21 +2,14 @@
 module.exports = {
 	parser: '@typescript-eslint/parser',
 	extends: [
-		'@marfeel/ts',
-		'@marfeel/react'
+		'@marfeel/react',
+		'@marfeel/ts'
 	],
 	rules: {
 		'react/jsx-filename-extension': [
 			'warn',
 			{
-				extensions: ['.jsx', '.tsx']
-			}
-		],
-		'@typescript-eslint/explicit-function-return-type': [
-			'warn',
-			{
-				allowExpressions: true,
-				allowTypedFunctionExpressions: true
+				extensions: ['.ts', '.tsx']
 			}
 		]
 	}
