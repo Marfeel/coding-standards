@@ -3,6 +3,7 @@ module.exports = {
 		'react'
 	],
 	extends: [
+		'@marfeel/js',
 		'plugin:react/recommended'
 	],
 	parser: 'babel-eslint',

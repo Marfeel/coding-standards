@@ -1,0 +1,23 @@
+{
+  "name": "@marfeel/eslint-config-mediagroup",
+  "version": "1.0.0",
+  "description": "eslint configuration for mediagroups",
+  "author": "Marfeel",
+  "license": "ISC",
+  "main": "index.js",
+  "keywords": [
+    "eslint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "dependencies": {
+    "@marfeel/eslint-config-jest": "^1.0.1-snapshot.32",
+    "@marfeel/eslint-config-js": "^1.0.1-snapshot.32",
+    "@marfeel/eslint-config-whitecollar": "^1.0.1-snapshot.32"
+  }
+}

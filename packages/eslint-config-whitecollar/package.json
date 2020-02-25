@@ -1,7 +1,7 @@
 {
-  "name": "@marfeel/eslint-config-react",
+  "name": "@marfeel/eslint-config-whitecollar",
   "version": "1.0.0",
-  "description": "marfeel eslint configuration for react",
+  "description": "whitecollar configuration",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "dependencies": {
-    "@marfeel/eslint-config-js": "^1.0.1-snapshot.19",
     "babel-eslint": "^10.0.3",
-    "eslint-plugin-react": "^7.17.0"
+    "@marfeel/eslint-plugin-whitecollar": "^1.0.0"
   }
 }
