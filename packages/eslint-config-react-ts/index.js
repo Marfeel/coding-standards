@@ -1,38 +1,38 @@
 
-module.exports =  {
-	parser:  '@typescript-eslint/parser',
-	extends:  [
-	  'plugin:react/recommended',
-	  'plugin:@typescript-eslint/recommended', 
-	  'plugin:@typescript-eslint/recommended-requiring-type-checking'
+module.exports = {
+	parser: '@typescript-eslint/parser',
+	extends: [
+		'plugin:react/recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/recommended-requiring-type-checking'
 	],
-   parserOptions:  {
-	  ecmaVersion:  2018,  
-	  sourceType:  'module', 
-	  ecmaFeatures:  {
-		jsx:  true, 
-	  }
+	parserOptions: {
+		ecmaVersion: 2018,
+		sourceType: 'module',
+		ecmaFeatures: {
+			jsx: true
+		}
 	},
 	settings: {
 		react: {
 			version: 'detect'
 		}
 	},
-	rules:  {
+	rules: {
 		'class-methods-use-this': 'warn',
 		'@typescript-eslint/require-await': 'off',
 		'react/jsx-filename-extension': [
 			'warn',
 			{
-			  extensions: ['.jsx', '.tsx'],
-			},
-		  ],
+				extensions: ['.jsx', '.tsx']
+			}
+		],
 		'@typescript-eslint/explicit-function-return-type': [
 			'warn',
 			{
-			  allowExpressions: true,
-			  allowTypedFunctionExpressions: true,
-			},
+				allowExpressions: true,
+				allowTypedFunctionExpressions: true
+			}
 		],
 		'jsx-quotes': 'error',
 		'react/button-has-type': 'error',
@@ -46,7 +46,6 @@ module.exports =  {
 			children: true
 		}],
 		'react/jsx-equals-spacing': ['error', 'never'],
-		'react/jsx-filename-extension': 'error',
 		'react/jsx-first-prop-new-line': 'error',
 		'react/jsx-fragments': ['error', 'element'],
 		'react/jsx-handler-names': 'error',
@@ -92,5 +91,5 @@ module.exports =  {
 		}],
 		'react/sort-comp': 'error',
 		'react/void-dom-elements-no-children': 'error'
-	},
-  };
+	}
+};
