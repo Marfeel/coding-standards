@@ -13,6 +13,7 @@ COPY packages/eslint-config-jasmine/package*.json .npmrc ./packages/eslint-confi
 COPY packages/eslint-config-node/package*.json .npmrc ./packages/eslint-config-node/
 COPY packages/eslint-config-ts/package*.json .npmrc ./packages/eslint-config-ts/
 COPY packages/eslint-config-react/package*.json .npmrc ./packages/eslint-config-react/
+COPY packages/eslint-config-react-ts/package*.json .npmrc ./packages/eslint-config-react-ts/
 COPY packages/eslint-config-vue/package*.json .npmrc ./packages/eslint-config-vue/
 COPY packages/stylelint-config-styled-components/package*.json .npmrc ./packages/stylelint-config-styled-components/
 COPY packages/scss-lint-config/package*.json .npmrc ./packages/scss-lint-config/
