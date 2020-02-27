@@ -19,6 +19,7 @@
   "dependencies": {
     "@marfeel/eslint-config-js": "^1.0.1-snapshot.19",
     "babel-eslint": "^10.0.3",
-    "eslint-plugin-react": "^7.17.0"
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.5.0"
   }
 }
