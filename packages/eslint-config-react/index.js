@@ -1,6 +1,7 @@
 module.exports = {
 	plugins: [
-		'react'
+		'react',
+		'react-hooks'
 	],
 	extends: [
 		'@marfeel/js',
@@ -76,6 +77,8 @@ module.exports = {
 			html: true
 		}],
 		'react/sort-comp': 'error',
-		'react/void-dom-elements-no-children': 'error'
+		'react/void-dom-elements-no-children': 'error',
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'warn'
 	}
 };
