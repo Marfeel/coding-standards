@@ -21,5 +21,16 @@ module.exports = {
 	ignorePatterns: [
 		'**/*.js',
 		'!**/src/**/*.js'
+	],
+	overrides: [
+		{
+			files: ['**/middlewares/**/*.js'],
+			rules: {
+				'no-restricted-properties': ['error', {
+					object: 'window',
+					property: 'document'
+				}]
+			}
+		}
 	]
 };
