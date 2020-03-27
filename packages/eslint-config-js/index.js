@@ -10,7 +10,12 @@ module.exports = {
 		browser: true,
 		es6: true
 	},
+	plugins: [
+		'no-async-foreach'
+	],
 	rules: {
+		'no-async-foreach/no-async-foreach': 'error',
+		'no-await-in-loop': 'warn',
 		'no-cond-assign': 'error',
 		'no-console': 'error',
 		'no-constant-condition': 'error',
