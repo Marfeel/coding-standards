@@ -1,0 +1,22 @@
+{
+  "name": "@marfeel/prettier-config",
+  "version": "1.0.0",
+  "description": "Marfeel's Prettier config",
+  "main": "index.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marfeel/coding-standards.git"
+  },
+  "keywords": [
+    "prettier"
+  ],
+  "author": "Marfeel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marfeel/coding-standards/issues"
+  },
+  "homepage": "https://github.com/Marfeel/coding-standards#readme",
+  "peerDependencies": {
+    "prettier": "^1.19.1"
+  }
+}
