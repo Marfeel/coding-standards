@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/eslint-config-react-ts",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "marfeel eslint configuration for react with typescript",
   "main": "index.js",
   "repository": {
