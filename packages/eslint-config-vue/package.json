@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/eslint-config-vue",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "marfeel eslint configuration for vue",
   "main": "index.js",
   "repository": {
