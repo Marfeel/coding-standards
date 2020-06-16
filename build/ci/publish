@@ -14,4 +14,4 @@ git config --global user.name 'jenkins'
 npm config list && git add . && git commit -m 'new version'
 git status
 
-npm run lerna publish -- from-package --dist-tag latest --canary --no-git-tag-version --yes --preid snapshot --registry https://repositories.mrf.io/nexus/repository/npm-internal/
+npm run lerna publish -- from-package --dist-tag latest --canary --yes --preid snapshot --registry https://repositories.mrf.io/nexus/repository/npm-internal/
