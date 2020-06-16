@@ -27,7 +27,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg GITHUB_ACCESS_TOKEN="$GITHUB_ACCESS_TOKEN" ."""
+          sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg GITHUB_ACCESS_TOKEN="$GITHUB_ACCESS_TOKEN" ."""
       }
     }
     stage('Lint') {
@@ -47,11 +47,9 @@ pipeline {
         }
       }
       steps {
-        withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
-          sh """
-            docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
-          """
-        }
+        sh """
+          docker run --rm --entrypoint /bin/bash $TAG -c "npm run lerna publish -- --dist-tag latest --canary --no-git-tag-version --yes --preid snapshot"
+        """
       }
     }
   }
