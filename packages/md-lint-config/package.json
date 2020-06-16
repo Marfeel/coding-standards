@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/md-lint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "marfeel md-lint configuration",
   "main": ".markdownlint.json",
   "repository": {

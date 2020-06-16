@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/stylelint-config-styled-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "marfeel style-lint configuration for styled-components",
   "main": "index.js",
   "repository": {

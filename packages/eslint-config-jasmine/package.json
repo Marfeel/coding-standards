@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/eslint-config-jasmine",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "marfeel eslint configuration for jasmine tests",
   "main": "index.js",
   "repository": {

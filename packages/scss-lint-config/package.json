@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/scss-lint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "marfeel scss-lint configuration",
   "main": "scss-lint.yml",
   "repository": {
