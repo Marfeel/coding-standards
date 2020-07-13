@@ -24,7 +24,10 @@ module.exports = {
 	],
 	overrides: [
 		{
-			files: ['**/middlewares/**/*.js'],
+			files: ['**/middlewares/**/*.ts'],
+			extends: [
+				'@marfeel/eslint-config-ts'
+			],
 			rules: {
 				'no-restricted-properties': ['error', {
 					object: 'window',
