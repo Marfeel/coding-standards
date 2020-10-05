@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "dependencies": {
     "eslint-plugin-jest": "^22.6.4"
+  },
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
   }
 }

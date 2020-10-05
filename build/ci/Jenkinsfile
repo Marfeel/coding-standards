@@ -8,7 +8,7 @@ pipeline {
     timestamps()
   }
   environment {
-    GITHUB_ACCESS_TOKEN = credentials('BOB_GITHUB_TOKEN')
+    NPM_NEXUS_AUTH = credentials('NPM_NEXUS_AUTH')
     SSH_KEY = credentials('JENKINS_SSH_PRIVATE_KEY')
     TAG = "marfeel-coding-standards:${env.BUILD_NUMBER}"
   }
@@ -27,7 +27,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-          sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg GITHUB_ACCESS_TOKEN="$GITHUB_ACCESS_TOKEN" ."""
+          sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
       }
     }
     stage('Lint') {

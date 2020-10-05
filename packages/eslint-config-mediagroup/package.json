@@ -20,5 +20,8 @@
     "@marfeel/eslint-config-js": "^1.0.1-snapshot.32",
     "@marfeel/eslint-config-ts": "^1.0.4-snapshot.77",
     "@marfeel/eslint-config-whitecollar": "^1.0.1-snapshot.32"
+  },
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
   }
 }
