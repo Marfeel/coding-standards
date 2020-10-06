@@ -19,5 +19,8 @@
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "@marfeel/eslint-plugin-whitecollar": "^1.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
   }
 }

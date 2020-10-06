@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Marfeel/coding-standards/issues"
   },
-  "homepage": "https://github.com/Marfeel/coding-standards/packages/md-lint#readme"
+  "homepage": "https://github.com/Marfeel/coding-standards/packages/md-lint#readme",
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
+  }
 }

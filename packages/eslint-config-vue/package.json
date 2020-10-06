@@ -19,5 +19,8 @@
   "dependencies": {
     "eslint-plugin-vue": "^6.1.1",
     "vue-eslint-parser": "^7.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
   }
 }

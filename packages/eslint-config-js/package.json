@@ -19,5 +19,8 @@
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "eslint-plugin-no-async-foreach": "^0.1.1"
+  },
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
   }
 }

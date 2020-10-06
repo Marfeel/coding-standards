@@ -18,6 +18,9 @@
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "peerDependencies": {
     "prettier": "^1.19.1"
+  },
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
   }
 }
 

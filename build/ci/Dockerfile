@@ -1,6 +1,6 @@
 FROM node:lts-buster as dependencies
 
-ARG GITHUB_ACCESS_TOKEN
+ARG NPM_NEXUS_AUTH
 
 WORKDIR /root/
 
@@ -19,9 +19,8 @@ COPY packages/stylelint-config-styled-components/package*.json .npmrc ./packages
 COPY packages/scss-lint-config/package*.json .npmrc ./packages/scss-lint-config/
 COPY packages/md-lint-config/package*.json .npmrc ./packages/md-lint-config/
 
-RUN npm config set registry https://npm.pkg.github.com/marfeel
-RUN npm config set //npm.pkg.github.com/:_authToken ${GITHUB_ACCESS_TOKEN}
-RUN npm config set unsafe-perm true 
+RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authToken ${NPM_NEXUS_AUTH}
+RUN npm config set strict-ssl false
 
 RUN npm install lerna -g
 RUN lerna bootstrap --hoist

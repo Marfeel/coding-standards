@@ -22,5 +22,8 @@
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
     "eslint-plugin-react": "^7.17.0"
+  },
+  "publishConfig": {
+    "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
   }
 }
