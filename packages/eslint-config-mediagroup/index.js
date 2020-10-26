@@ -12,15 +12,13 @@
  * from Marfeel Solutions SL.
  */
 
+const projectRoot = `${__dirname}/../../../`;
+
 module.exports = {
 	extends: [
 		'@marfeel/eslint-config-js',
 		'@marfeel/eslint-config-jest',
 		'@marfeel/eslint-config-whitecollar'
-	],
-	ignorePatterns: [
-		'**/*.js',
-		'!**/src/**/*.js'
 	],
 	overrides: [
 		{
@@ -28,6 +26,10 @@ module.exports = {
 			extends: [
 				'@marfeel/eslint-config-ts'
 			],
+			parserOptions: {
+				tsconfigRootDir: projectRoot,
+				project: './tsconfig.json'
+			},
 			rules: {
 				'no-restricted-properties': ['error', {
 					object: 'window',
@@ -37,5 +39,3 @@ module.exports = {
 		}
 	]
 };
-
-
