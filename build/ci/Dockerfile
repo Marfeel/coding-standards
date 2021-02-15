@@ -18,6 +18,8 @@ COPY packages/eslint-config-vue/package*.json .npmrc ./packages/eslint-config-vu
 COPY packages/stylelint-config-styled-components/package*.json .npmrc ./packages/stylelint-config-styled-components/
 COPY packages/scss-lint-config/package*.json .npmrc ./packages/scss-lint-config/
 COPY packages/md-lint-config/package*.json .npmrc ./packages/md-lint-config/
+COPY packages/prettier-config/package*.json .npmrc ./packages/prettier-config/
+
 
 RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authToken ${NPM_NEXUS_AUTH}
 RUN npm config set strict-ssl false
