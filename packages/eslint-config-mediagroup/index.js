@@ -20,22 +20,31 @@ module.exports = {
 	],
 	ignorePatterns: [
 		'**/*.js',
-		'!**/src/**/*.js'
+		'!**/src/**/*.js',
+		'**/lib/**/*.ts',
+		'**/3pi-widgets/**/*.ts'
 	],
 	overrides: [
 		{
 			files: ['**/middlewares/**/*.ts'],
+			parser: '@typescript-eslint/parser',
+			plugins: ['@typescript-eslint'],
 			extends: [
-				'@marfeel/eslint-config-ts'
+				'@marfeel/js',
+				'plugin:@typescript-eslint/eslint-recommended',
+				'plugin:@typescript-eslint/recommended'
 			],
 			rules: {
 				'no-restricted-properties': ['error', {
 					object: 'window',
 					property: 'document'
-				}]
+				}],
+				'class-methods-use-this': 'warn',
+				'@typescript-eslint/require-await': 'off',
+				'@typescript-eslint/explicit-function-return-type': 2,
+				'@typescript-eslint/no-explicit-any': 'error',
+				'@typescript-eslint/no-empty-function': 'error'
 			}
 		}
 	]
 };
-
-
