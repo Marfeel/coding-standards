@@ -11,8 +11,6 @@ module.exports = {
 			{
 				extensions: ['.ts', '.tsx']
 			}
-		],
-		'no-use-before-define': 'off',
-		'@typescript-eslint/no-use-before-define': 'error'
+		]
 	}
 };
