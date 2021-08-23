@@ -8,6 +8,10 @@ module.exports = {
 	],
 	rules: {
 		'class-methods-use-this': 'warn',
-		'@typescript-eslint/require-await': 'off'
+		'@typescript-eslint/require-await': 'off',
+		'no-use-before-define': 'off',
+		'@typescript-eslint/no-use-before-define': 'error',
+		'no-shadow': 'off',
+		'@typescript-eslint/no-shadow': ['error']
 	}
 };
