@@ -19,11 +19,14 @@
   "dependencies": {
     "@marfeel/eslint-config-react": "^1.0.1-snapshot.44",
     "@marfeel/eslint-config-ts": "^1.0.1-snapshot.44",
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
     "eslint-plugin-react": "^7.17.0"
   },
   "publishConfig": {
     "registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
+  },
+  "devDependencies": {
+
   }
 }
