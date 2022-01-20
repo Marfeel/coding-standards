@@ -13,6 +13,14 @@ module.exports = {
 		'@typescript-eslint/no-use-before-define': 'error',
 		'no-shadow': 'off',
 		'@typescript-eslint/no-shadow': ['error'],
-		'@typescript-eslint/no-explicit-any': 'error'
-	}
+		'@typescript-eslint/no-explicit-any': 'error',
+		'@typescript-eslint/unbound-method': 'error',
+		'@typescript-eslint/no-floating-promises': 'warn'
+	},
+	overrides: {
+		files: ['*.test.tsx', '*.test.ts', '*.spec.tsx', '*.spec.ts'],
+		rules: {
+			'@typescript-eslint/unbound-method': 'off'
+		}
+	} 
 };
