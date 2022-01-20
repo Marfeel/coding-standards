@@ -17,10 +17,10 @@ module.exports = {
 		'@typescript-eslint/unbound-method': 'error',
 		'@typescript-eslint/no-floating-promises': 'warn'
 	},
-	overrides: {
+	overrides: [{
 		files: ['*.test.tsx', '*.test.ts', '*.spec.tsx', '*.spec.ts'],
 		rules: {
 			'@typescript-eslint/unbound-method': 'off'
 		}
-	}
+	}]
 };
