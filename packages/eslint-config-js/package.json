@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/eslint-config-js",
-  "version": "1.0.3",
+  "version": "2.0.1",
   "description": "basic eslint configuration for javascript",
   "main": "index.js",
   "repository": {
