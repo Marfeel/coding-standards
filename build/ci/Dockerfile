@@ -24,7 +24,7 @@ COPY packages/prettier-config/package*.json .npmrc ./packages/prettier-config/
 RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authToken ${NPM_NEXUS_AUTH}
 RUN npm config set strict-ssl false
 
-RUN npm install lerna -g
+RUN npm install lerna@3.19.0 -g
 RUN lerna bootstrap --hoist
 
 FROM node:lts-buster
