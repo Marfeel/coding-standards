@@ -1,2 +1,2 @@
-# Marfeel coding-standards
+# coding-standards
 
