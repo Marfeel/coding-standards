@@ -1,6 +1,6 @@
 {
   "name": "@marfeel/eslint-config-js",
-  "version": "1.0.3",
+  "version": "2.0.1",
   "description": "basic eslint configuration for javascript",
   "main": "index.js",
   "repository": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Marfeel/coding-standards#readme",
   "dependencies": {
-    "babel-eslint": "^10.0.3",
+    "@babel/eslint-parser": "^7.5.4",
     "eslint-plugin-no-async-foreach": "^0.1.1"
   },
   "publishConfig": {
