@@ -1,0 +1,108 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"organizeImports": {
+		"enabled": false
+	},
+	"files": {
+		"include": [
+			"src/**"
+		],
+		"ignore": [
+			"lib",
+			"storybook-static",
+			"node_modules",
+			"dist",
+			"build",
+			".next",
+			"coverage",
+			"*.snap",
+			"jest",
+			"babel.config*",
+			"src/design-tokens/icons.js",
+			"jest.config.js"
+		]
+	},
+	"overrides": [{
+		"include": [
+			"*.stories.*",
+			"*.test.*"
+		],
+		"linter": {
+			"rules": {
+				"a11y": {
+					"useValidAnchor": "warn"
+				},
+				"suspicious": {
+					"noConsole": "warn",
+					"noShadowRestrictedNames": "warn"
+				}
+			}
+		}
+	}],
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 120,
+		"useEditorconfig": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "warn",
+				"noImplicitAnyLet": "warn",
+				"noArrayIndexKey": "warn",
+				"noConsole": {
+					"level": "error",
+					"options": {
+						"allow": [
+							"error"
+						]
+					}
+				}
+			},
+			"correctness": {
+				"noUnusedVariables": "warn",
+				"noUnusedImports": "error",
+				"useExhaustiveDependencies": "warn"
+			},
+			"a11y": {
+				"useAltText": "warn",
+				"useKeyWithClickEvents": "info",
+				"useKeyWithMouseEvents": "info",
+				"useMediaCaption": "info",
+				"noSvgWithoutTitle": "off"
+			},
+			"style": {
+				"noNonNullAssertion": "info",
+				"useShorthandArrayType": "warn",
+				"noParameterAssign": "error",
+				"useImportType": "info",
+				"useNumberNamespace": "info",
+				"useNodejsImportProtocol": "off",
+				"useEnumInitializers": "off"
+			},
+			"complexity": {
+				"noForEach": "off",
+				"useArrowFunction": "warn",
+				"useOptionalChain": "info",
+				"noUselessFragments": "warn"
+			},
+			"performance": {
+				"noAccumulatingSpread": "warn"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "warn"
+			}
+		}
+	},
+	"javascript": {
+		"jsxRuntime": "reactClassic",
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingCommas": "none",
+			"semicolons": "always"
+		}
+	}
+}
