@@ -19,6 +19,7 @@ COPY packages/stylelint-config-styled-components/package*.json .npmrc ./packages
 COPY packages/scss-lint-config/package*.json .npmrc ./packages/scss-lint-config/
 COPY packages/md-lint-config/package*.json .npmrc ./packages/md-lint-config/
 COPY packages/prettier-config/package*.json .npmrc ./packages/prettier-config/
+COPY packages/biomejs-config/package*.json .npmrc ./packages/biomejs-config/
 
 
 RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authToken ${NPM_NEXUS_AUTH}
