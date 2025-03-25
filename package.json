@@ -3,15 +3,17 @@
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {
-    "lerna": "^3.19.0"
+  "engines": {
+    "node": ">=18.0.0"
   },
   "homepage": "https://github.com/Marfeel/coding-standards",
   "scripts": {
     "lint": "eslint .",
-    "lerna": "lerna",
-    "build": "lerna run build",
-    "bootstrap": "lerna bootstrap --hoist"
+    "build": "npm run build --workspaces --if-present",
+    "install-all": "npm install",
+    "test": "npm test --workspaces --if-present",
+    "version-bump": "npm version --workspaces",
+    "publish-packages": "npm publish --workspaces --access public"
   },
   "dependencies": {
     "eslint": "^6.7.2"
