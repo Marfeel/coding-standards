@@ -81,7 +81,8 @@
 				"useImportType": "info",
 				"useNumberNamespace": "info",
 				"useNodejsImportProtocol": "off",
-				"useEnumInitializers": "off"
+				"useEnumInitializers": "off",
+				"useLiteralEnumMembers": "off"
 			},
 			"complexity": {
 				"noForEach": "off",
