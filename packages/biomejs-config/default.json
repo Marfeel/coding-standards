@@ -69,8 +69,8 @@
 			},
 			"a11y": {
 				"useAltText": "warn",
-				"useKeyWithClickEvents": "info",
-				"useKeyWithMouseEvents": "info",
+				"useKeyWithClickEvents": "off",
+				"useKeyWithMouseEvents": "off",
 				"useMediaCaption": "info",
 				"noSvgWithoutTitle": "off"
 			},
