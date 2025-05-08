@@ -1,4 +1,4 @@
-FROM node:lts-buster as dependencies
+FROM node:18-buster as dependencies
 
 ARG NPM_NEXUS_AUTH
 
@@ -6,7 +6,7 @@ WORKDIR /root/
 
 WORKDIR /app
 
-COPY lerna.json package.json package-lock.json .npmrc ./
+COPY package.json package-lock.json .npmrc ./
 COPY packages/eslint-config-js/package*.json .npmrc ./packages/eslint-config-js/
 COPY packages/eslint-config-jest/package*.json .npmrc ./packages/eslint-config-jest/
 COPY packages/eslint-config-jasmine/package*.json .npmrc ./packages/eslint-config-jasmine/
@@ -25,10 +25,9 @@ COPY packages/biomejs-config/package*.json .npmrc ./packages/biomejs-config/
 RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authToken ${NPM_NEXUS_AUTH}
 RUN npm config set strict-ssl false
 
-RUN npm install lerna@3.19.0 -g
-RUN lerna bootstrap --hoist
+RUN npm install
 
-FROM node:lts-buster
+FROM node:18-buster
 
 WORKDIR /app
 
