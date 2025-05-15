@@ -72,7 +72,8 @@
 				"useKeyWithClickEvents": "off",
 				"useKeyWithMouseEvents": "off",
 				"useMediaCaption": "info",
-				"noSvgWithoutTitle": "off"
+				"noSvgWithoutTitle": "off",
+				"noPositiveTabindex": "off"
 			},
 			"style": {
 				"noNonNullAssertion": "info",
