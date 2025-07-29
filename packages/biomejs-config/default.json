@@ -65,7 +65,8 @@
 			"correctness": {
 				"noUnusedVariables": "warn",
 				"noUnusedImports": "error",
-				"useExhaustiveDependencies": "warn"
+				"useExhaustiveDependencies": "warn",
+				"useHookAtTopLevel": "error"
 			},
 			"a11y": {
 				"useAltText": "warn",
