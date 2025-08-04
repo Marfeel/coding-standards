@@ -1,14 +1,19 @@
 {
   "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "workspaces": [
     "packages/*"
   ],
   "homepage": "https://github.com/Marfeel/coding-standards",
   "scripts": {
     "lint": "eslint .",
+    "build": "npm run build --workspaces --if-present",
     "install-all": "npm install",
-    "clean": "npm run clean --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present"
+    "test": "npm test --workspaces --if-present",
+    "version-bump": "npm version --workspaces",
+    "publish-packages": "npm publish --workspaces --access public"
   },
   "dependencies": {
     "eslint": "^6.7.2"
