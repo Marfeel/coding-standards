@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-# Build if scripts exist
 npm run build
 
-# Run publish command
 npm run publish-packages -- --tag latest --preid snapshot
 
 for dir in packages/*/ ; do

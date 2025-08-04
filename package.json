@@ -12,8 +12,7 @@
     "build": "npm run build --workspaces --if-present",
     "install-all": "npm install",
     "test": "npm test --workspaces --if-present",
-    "version-bump": "npm version --workspaces",
-    "publish-packages": "npm publish --workspaces --access public"
+    "publish-packages": "npm publish --workspaces"
   },
   "dependencies": {
     "eslint": "^6.7.2"
