@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-npm run lerna publish -- --dist-tag latest --canary --no-git-tag-version --yes --preid snapshot
+npm run build
+
+npm run publish-packages -- --tag latest --preid snapshot
 
 for dir in packages/*/ ; do
   printf "registry = https://repositories.mrf.io/nexus/repository/npm-internal/\nalways-auth=true\n_auth=${1}" > "${dir}.npmrc"
@@ -14,4 +16,4 @@ git config --global user.name 'jenkins'
 npm config list && git add . && git commit -m 'new version'
 git status
 
-npm run lerna publish -- --dist-tag latest --canary --no-git-tag-version --yes --preid snapshot --registry https://repositories.mrf.io/nexus/repository/npm-internal/
+npm run publish-packages -- --tag latest --preid snapshot --registry https://repositories.mrf.io/nexus/repository/npm-internal/
