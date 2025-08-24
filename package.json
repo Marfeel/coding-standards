@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^3.19.0"
+    "lerna": "^6.4.1"
   },
   "homepage": "https://github.com/Marfeel/coding-standards",
   "scripts": {
