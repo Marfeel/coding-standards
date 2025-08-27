@@ -36,6 +36,8 @@ WORKDIR /app
 COPY --from=dependencies /root/.npmrc /root/.npmrc
 COPY --from=dependencies /app/node_modules /app/node_modules
 COPY --from=dependencies /app/packages /app/packages
+COPY --from=dependencies /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=dependencies /usr/local/bin /usr/local/bin
 COPY . .
 
 ENTRYPOINT ["npm"]
