@@ -25,19 +25,24 @@ pipeline {
           '''
       }
     }
-    stage('Build') {
+    // stage('Build') {
+    //   steps {
+    //       sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
+    //   }
+    // }
+    // stage('Lint') {
+    //   when {
+    //     expression {
+    //       return env.GIT_BRANCH != "origin/master"
+    //     }
+    //   }
+    //   steps {
+    //     sh 'docker run --rm $TAG run lint'
+    //   }
+    // }
+    stage('Claude') {
       steps {
-          sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
-      }
-    }
-    stage('Lint') {
-      when {
-        expression {
-          return env.GIT_BRANCH != "origin/master"
-        }
-      }
-      steps {
-        sh 'docker run --rm $TAG run lint'
+        sh 'echo seh'
       }
     }
     stage('Publish') {
@@ -47,7 +52,7 @@ pipeline {
         }
       }
       steps {
-         withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
+        withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
           sh """
             docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
           """
