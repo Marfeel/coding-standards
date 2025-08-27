@@ -10,6 +10,7 @@ pipeline {
   environment {
     NPM_NEXUS_AUTH = credentials('NPM_NEXUS_AUTH')
     SSH_KEY = credentials('JENKINS_SSH_PRIVATE_KEY')
+    CLAUDE_AUTH_TOKEN = credentials('CLAUDE_AUTH_TOKEN')
     TAG = "marfeel-coding-standards:${env.BUILD_NUMBER}"
   }
 
@@ -42,22 +43,28 @@ pipeline {
     // }
     stage('Claude') {
       steps {
-        sh 'echo seh'
+        sh """
+          docker run --rm \\
+            -e CLAUDE_AUTH_TOKEN="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" \\
+            --entrypoint /bin/bash \\
+            $TAG \\
+            -c 'echo "$CLAUDE_AUTH_TOKEN" | claude config set token && claude --print "run a git diff master, and give me a little text summary of the changes"'
+        """
       }
     }
-    stage('Publish') {
-      when {
-        expression {
-          return env.GIT_BRANCH == "origin/master"
-        }
-      }
-      steps {
-        withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
-          sh """
-            docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
-          """
-        }
-      }
-    }
+    // stage('Publish') {
+    //   when {
+    //     expression {
+    //       return env.GIT_BRANCH == "origin/master"
+    //     }
+    //   }
+    //   steps {
+    //     withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
+    //       sh """
+    //         docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
+    //       """
+    //     }
+    //   }
+    // }
   }
 }

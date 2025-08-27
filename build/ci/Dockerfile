@@ -26,6 +26,7 @@ RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authTok
 RUN npm config set strict-ssl false
 
 RUN npm install lerna@3.19.0 -g
+RUN npm install -g @anthropic-ai/claude-code
 RUN lerna bootstrap --hoist
 
 FROM node:lts-buster
