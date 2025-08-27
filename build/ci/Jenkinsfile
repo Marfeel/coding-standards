@@ -46,7 +46,7 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'git diff master > diff.txt && cat ./diff.txt'
+            -c 'git diff origin/master > diff.txt && cat ./diff.txt'
         """
       }
     }
