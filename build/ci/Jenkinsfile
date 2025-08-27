@@ -25,11 +25,11 @@ pipeline {
           '''
       }
     }
-    // stage('Build') {
-    //   steps {
-    //       sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
-    //   }
-    // }
+    stage('Build') {
+      steps {
+          sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
+      }
+    }
     // stage('Lint') {
     //   when {
     //     expression {
