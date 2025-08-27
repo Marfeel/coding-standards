@@ -46,7 +46,7 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'claude config set --global token "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" && claude --print "say hello"'
+            -c 'export ANTHROPIC_API_KEY="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" && claude --print "say hello"'
         """
       }
     }
