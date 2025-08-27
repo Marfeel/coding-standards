@@ -10,7 +10,7 @@ pipeline {
   environment {
     NPM_NEXUS_AUTH = credentials('NPM_NEXUS_AUTH')
     SSH_KEY = credentials('JENKINS_SSH_PRIVATE_KEY')
-    CLAUDE_AUTH_TOKEN = "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"
+    CLAUDE_AUTH_TOKEN = ""
     TAG = "marfeel-coding-standards:${env.BUILD_NUMBER}"
   }
 
