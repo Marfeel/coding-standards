@@ -46,7 +46,7 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c export ANTHROPIC_AUTH_TOKEN="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" && claude --print "say hello"'
+            -c 'export ANTHROPIC_AUTH_TOKEN="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" && claude --print "say hello"'
         """
       }
     }
