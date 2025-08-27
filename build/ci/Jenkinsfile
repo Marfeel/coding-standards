@@ -10,7 +10,6 @@ pipeline {
   environment {
     NPM_NEXUS_AUTH = credentials('NPM_NEXUS_AUTH')
     SSH_KEY = credentials('JENKINS_SSH_PRIVATE_KEY')
-    CLAUDE_AUTH_TOKEN = ""
     TAG = "marfeel-coding-standards:${env.BUILD_NUMBER}"
   }
 
@@ -45,13 +44,13 @@ pipeline {
       steps {
         sh """
           docker run --rm \\
-            -e CLAUDE_AUTH_TOKEN="$CLAUDE_AUTH_TOKEN" \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'echo "$CLAUDE_AUTH_TOKEN" | claude config set token && claude --print "run a git diff master, and give me a little text summary of the changes"'
+            -c 'git diff master > diff.txt && cat ./diff.txt'
         """
       }
     }
+    // -c 'echo "seh" | claude config set token && claude --print "run a git diff master, and give me a little text summary of the changes"'
     // stage('Publish') {
     //   when {
     //     expression {
