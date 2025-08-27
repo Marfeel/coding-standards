@@ -46,7 +46,7 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'echo "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" | claude config set token && claude --print "run a git diff origin/master, and give me a little text summary of the changes"'
+            -c 'echo "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" | claude config set token && claude "run a git diff origin/master, and give me a little text summary of the changes"'
         """
       }
     }
