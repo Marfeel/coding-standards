@@ -10,6 +10,7 @@ pipeline {
   environment {
     NPM_NEXUS_AUTH = credentials('NPM_NEXUS_AUTH')
     SSH_KEY = credentials('JENKINS_SSH_PRIVATE_KEY')
+    CLAUDE_TOKEN = credentials('CLAUDE_AUTH_TOKEN')
     TAG = "marfeel-coding-standards:${env.BUILD_NUMBER}"
   }
 
@@ -30,29 +31,40 @@ pipeline {
           sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
       }
     }
-    stage('Lint') {
-      when {
-        expression {
-          return env.GIT_BRANCH != "origin/master"
-        }
-      }
+    // stage('Lint') {
+    //   when {
+    //     expression {
+    //       return env.GIT_BRANCH != "origin/master"
+    //     }
+    //   }
+    //   steps {
+    //     sh 'docker run --rm $TAG run lint'
+    //   }
+    // }
+    stage('Claude') {
       steps {
-        sh 'docker run --rm $TAG run lint'
+        sh """
+          docker run --rm \\
+            --entrypoint /bin/bash \\
+            $TAG \\
+            -c 'export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_TOKEN" \\
+            && claude -p "write relase notes for the changes on this branch compared to master. Be direct and concise avoiding repetition and fostering clear thinking aiming final non-tech users"'
+        """
       }
     }
-    stage('Publish') {
-      when {
-        expression {
-          return env.GIT_BRANCH == "origin/master"
-        }
-      }
-      steps {
-         withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
-          sh """
-            docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
-          """
-        }
-      }
-    }
+    // stage('Publish') {
+    //   when {
+    //     expression {
+    //       return env.GIT_BRANCH == "origin/master"
+    //     }
+    //   }
+    //   steps {
+    //     withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
+    //       sh """
+    //         docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
+    //       """
+    //     }
+    //   }
+    // }
   }
 }

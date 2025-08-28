@@ -26,6 +26,7 @@ RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authTok
 RUN npm config set strict-ssl false
 
 RUN npm install lerna@3.19.0 -g
+RUN npm install -g @anthropic-ai/claude-code
 RUN lerna bootstrap --hoist
 
 FROM node:lts-buster
@@ -35,6 +36,8 @@ WORKDIR /app
 COPY --from=dependencies /root/.npmrc /root/.npmrc
 COPY --from=dependencies /app/node_modules /app/node_modules
 COPY --from=dependencies /app/packages /app/packages
+COPY --from=dependencies /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=dependencies /usr/local/bin /usr/local/bin
 COPY . .
 
 ENTRYPOINT ["npm"]

@@ -1,0 +1,96 @@
+diff --git a/.gitignore b/.gitignore
+index 3c3629e..ed7e429 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,4 @@
+ node_modules
++
++# ai
++CLAUDE.md
+diff --git a/build/ci/Dockerfile b/build/ci/Dockerfile
+index be56b63..320b4d2 100644
+--- a/build/ci/Dockerfile
++++ b/build/ci/Dockerfile
+@@ -26,6 +26,7 @@ RUN npm config set //repositories.mrf.io/nexus/repository/npm-internal/:_authTok
+ RUN npm config set strict-ssl false
+ 
+ RUN npm install lerna@3.19.0 -g
++RUN npm install -g @anthropic-ai/claude-code
+ RUN lerna bootstrap --hoist
+ 
+ FROM node:lts-buster
+diff --git a/build/ci/Jenkinsfile b/build/ci/Jenkinsfile
+index ffd1254..ca81444 100644
+--- a/build/ci/Jenkinsfile
++++ b/build/ci/Jenkinsfile
+@@ -25,34 +25,44 @@ pipeline {
+           '''
+       }
+     }
+-    stage('Build') {
++    // stage('Build') {
++    //   steps {
++    //       sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
++    //   }
++    // }
++    // stage('Lint') {
++    //   when {
++    //     expression {
++    //       return env.GIT_BRANCH != "origin/master"
++    //     }
++    //   }
++    //   steps {
++    //     sh 'docker run --rm $TAG run lint'
++    //   }
++    // }
++    stage('Claude') {
+       steps {
+-          sh """docker build -f build/ci/Dockerfile -t $TAG --build-arg NPM_NEXUS_AUTH="$NPM_NEXUS_AUTH" ."""
+-      }
+-    }
+-    stage('Lint') {
+-      when {
+-        expression {
+-          return env.GIT_BRANCH != "origin/master"
+-        }
+-      }
+-      steps {
+-        sh 'docker run --rm $TAG run lint'
+-      }
+-    }
+-    stage('Publish') {
+-      when {
+-        expression {
+-          return env.GIT_BRANCH == "origin/master"
+-        }
+-      }
+-      steps {
+-         withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
+-          sh """
+-            docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
+-          """
+-        }
++        sh """
++          docker run --rm \\
++            --entrypoint /bin/bash \\
++            $TAG \\
++            -c 'echo "$CLAUDE_AUTH_TOKEN" | claude config set token && claude --print "run a git diff master, and give me a little text summary of the changes"'
++        """
+       }
+     }
++    // stage('Publish') {
++    //   when {
++    //     expression {
++    //       return env.GIT_BRANCH == "origin/master"
++    //     }
++    //   }
++    //   steps {
++    //     withCredentials([string(credentialsId: 'NEXUS_BASIC_AUTH_BASE64', variable: 'nexusAuth')]) {
++    //       sh """
++    //         docker run --rm --entrypoint /bin/bash $TAG -c 'build/ci/publish ${nexusAuth}'
++    //       """
++    //     }
++    //   }
++    // }
+   }
+ }
