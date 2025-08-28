@@ -47,7 +47,8 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_TOKEN" && claude -p "say helooooo"'
+            -c 'export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_TOKEN" \\
+            && claude -p "write relase notes for the changes on this branch compared to master. Be direct and concise avoiding repetition and fostering clear thinking aiming final non-tech users"'
         """
       }
     }
