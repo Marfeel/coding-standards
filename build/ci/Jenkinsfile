@@ -10,6 +10,7 @@ pipeline {
   environment {
     NPM_NEXUS_AUTH = credentials('NPM_NEXUS_AUTH')
     SSH_KEY = credentials('JENKINS_SSH_PRIVATE_KEY')
+    CLAUDE_AUTH = credentials('CLAUDE_AUTH_TOKEN')
     TAG = "marfeel-coding-standards:${env.BUILD_NUMBER}"
   }
 
@@ -46,12 +47,11 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'export CLAUDE_CODE_OAUTH_TOKEN="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" && claude -p "write relase notes for the changes on this branch compared to master. Be direct and concise avoiding repetition and fostering clear thinking aiming final non-tech users."'
+            -c 'export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_AUTH_TOKEN" && claude -p "say helooooo"'
         """
       }
     }
     // stage('Publish') {
-            // -c 'export CLAUDE_CODE_OAUTH_TOKEN="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" && claude -p "run the command \"git diff origin/master\", and give me a little summary of the changes"'
     //   when {
     //     expression {
     //       return env.GIT_BRANCH == "origin/master"
