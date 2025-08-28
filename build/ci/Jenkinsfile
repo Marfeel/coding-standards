@@ -47,10 +47,11 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_AUTH_TOKEN" && claude -p "say helooooo"'
+            -c 'echo "$CLAUDE_AUTH_TOKEN"'
         """
       }
     }
+    // -c 'export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_AUTH_TOKEN" && claude -p "say helooooo"'
     // stage('Publish') {
     //   when {
     //     expression {
