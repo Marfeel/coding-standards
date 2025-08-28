@@ -46,7 +46,7 @@ pipeline {
           docker run --rm \\
             --entrypoint /bin/bash \\
             $TAG \\
-            -c 'git diff origin/master > diff.txt && export CLAUDE_CODE_OAUTH_TOKEN="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" && claude -p "read the content of the ./diff.txt which contans the diff from the current commit, and give me a little summary of the changes"'
+            -c 'export CLAUDE_CODE_OAUTH_TOKEN="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" && claude -p "run the command \"git diff origin/master\", and give me a little summary of the changes"'
         """
       }
     }
